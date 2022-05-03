@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\DatasetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/mobilelogin', [LoginController::class, 'MobileLogin']);
+
+// Sensor Data API
+Route::get('/dataset', [DatasetController::class, 'dataset']);
+
+
+
+
 Route::get('/test', [TestController::class, 'create']);
