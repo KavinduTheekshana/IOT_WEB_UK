@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dataset;
 use Illuminate\Http\Request;
+use DB;
 
 class DatasetController extends Controller
 {
@@ -24,6 +25,23 @@ class DatasetController extends Controller
         Dataset::where('id', '1')->update($data);
     }
 
+
+    public function getdataset(Request $request)
+    {
+        $JsonArray=[];
+       
+            $dataset = DB::table('datasets')->where('id','=', '1')->first();  
+            if($dataset!=null){
+                    $JsonArray['dataset']=$dataset;
+                    $JsonArray['code']='1';
+                
+            } else{
+                $JsonArray['code']='0';
+            }
+       
+  
+        return json_encode($JsonArray);
+    }
    
 
    

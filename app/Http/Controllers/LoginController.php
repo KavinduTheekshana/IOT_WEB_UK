@@ -50,7 +50,7 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
     }
 
@@ -71,9 +71,10 @@ class LoginController extends Controller
      * @param  \App\Models\login  $login
      * @return \Illuminate\Http\Response
      */
-    public function show(login $login)
+    public function show()
     {
-        //
+        
+    return redirect('/login');
     }
 
     /**

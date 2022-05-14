@@ -25,6 +25,7 @@ Route::get('/mobilelogin', [LoginController::class, 'MobileLogin']);
 
 // Sensor Data API
 Route::get('/dataset', [DatasetController::class, 'dataset']);
+Route::get('/getdataset', [DatasetController::class, 'getdataset']);
 
 
 
